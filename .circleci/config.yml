@@ -1,10 +1,13 @@
-version: 2
+version: 2.1
+orbs:
+  browser-tools: circleci/browser-tools@1.2.5
 jobs:
   build:
     working_directory: ~/my-project
     docker:
       - image: circleci/node:10-browsers
     steps:
+      - browser-tools/install-browser-tools
       - checkout
       - restore_cache:
           key: my-project-{{ .Branch }}-{{ checksum "package-lock.json" }}
