@@ -5,7 +5,7 @@ jobs:
   build:
     working_directory: ~/my-project
     docker:
-      - image: circleci/node:10-browsers
+      - image: 'cimg/node:13.12-browsers'
     steps:
       - browser-tools/install-browser-tools
       - checkout
